@@ -37,6 +37,11 @@ pick ee2adc2 Adds new feature
 In our case, we wanted to change commit 2231360, so we just have to change `pick` to `edit` in the commit, and save the file.
 Then, we would edit the commit as we would, stage our changes and finally run `git rebase --continue` to finish the process.
 
+Another useful usecase is renaming more than one commit. Do `git rebase
+--interactive HEAD~n` where n is the number of commits you wanna change the
+wording and then put reword in each of them you want to change. Save, quit, and
+you will be prompted to edit each commit you chose.
+
 ## Invalid Remote Branch
 
 Sometimes local branches are tracking invalid remote branches, or incorrect ones. In order to first check which branch our local is tracking remotely, we can run the following command:
