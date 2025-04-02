@@ -103,3 +103,12 @@ the local branch to a new remote branch:
 ```bash
 git push <remote-name> <local-branch-name>:<remote-branch-name>
 ```
+
+## Create new brach off remote one
+
+In order to create a remote branch from the tip of a remote branch, you can do:
+
+```bash
+git switch -c feat/new-feature remote/branch
+git push -u feat/new-feature
+```
