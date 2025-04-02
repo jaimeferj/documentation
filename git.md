@@ -10,8 +10,12 @@ In order to change not but the last commit, you can use the following command:
 
 ```git rebase --interactive HASH~```
 
-Where HASH is the commit you want to change. Note the tilde at the end of the command, because you need to reapply commits on top of the previous commit of HASH (that is HASH~).
-An editor will pop up with the list of commits starting from HASH. You can change the word "pick" to "edit" in the commit you want to change or even other advanced changes.
+Where HASH is the commit you want to change. Note the tilde at the end of the
+command, because you need to reapply commits on top of the previous commit of
+HASH (that is HASH~).
+An editor will pop up with the list of commits starting from HASH. You can
+change the word "pick" to "edit" in the commit you want to change or even other
+advanced changes.
 After all the changes haven been made save and close the editor.
 An example showing the possible editions is:
 
@@ -32,19 +36,22 @@ pick ee2adc2 Adds new feature
 # d, drop = remove commit
 ```
 
-> **CLARIFICATION**: The commit are printed in reverse order, so the first commit is the last one (in this case ee2adc2).
+> **CLARIFICATION**: The commit are printed in reverse order, so the first
+> commit is the last one (in this case ee2adc2).
 
-In our case, we wanted to change commit 2231360, so we just have to change `pick` to `edit` in the commit, and save the file.
-Then, we would edit the commit as we would, stage our changes and finally run `git rebase --continue` to finish the process.
+In our case, we wanted to change commit 2231360, so we just have to change
+`pick` to `edit` in the commit, and save the file.
+Then, we would edit the commit as we would, stage our changes and finally run
+`git rebase --continue` to finish the process.
 
 Another useful usecase is renaming more than one commit. Do `git rebase
 --interactive HEAD~n` where n is the number of commits you wanna change the
 wording and then put reword in each of them you want to change. Save, quit, and
-you will be prompted to edit each commit you chose.
+you will be prompted to edit each commit you chose. ## Invalid Remote Branch
 
-## Invalid Remote Branch
-
-Sometimes local branches are tracking invalid remote branches, or incorrect ones. In order to first check which branch our local is tracking remotely, we can run the following command:
+Sometimes local branches are tracking invalid remote branches, or incorrect
+ones. In order to first check which branch our local is tracking remotely, we
+can run the following command:
 
 ```bash
 git branch -vv
@@ -55,7 +62,9 @@ git branch -vv
   main                041e136 [origin/main: ahead 1] change queue type name to vector-s3
 ```
 
-As can be seen, the local branch `feat/tasks-executor` is tracking the remote branch main instead of their respective branch. In order to fix this, we can run the following command:
+As can be seen, the local branch `feat/tasks-executor` is tracking the remote
+branch main instead of their respective branch. In order to fix this, we can
+run the following command:
 
 ## Changing branch tracking
 
@@ -83,11 +92,13 @@ hint: Disable this message with "git config set advice.setUpstreamFailure false"
 
 ```
 
-We will just have to create a the branch in the remote repository and then run the command again.
+We will just have to create a the branch in the remote repository and then run
+the command again.
 
 ## Craeting remote branches
 
-In order to create a remote branch, we can run the following command to push the local branch to a new remote branch:
+In order to create a remote branch, we can run the following command to push
+the local branch to a new remote branch:
 
 ```bash
 git push <remote-name> <local-branch-name>:<remote-branch-name>
