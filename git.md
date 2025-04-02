@@ -95,7 +95,7 @@ hint: Disable this message with "git config set advice.setUpstreamFailure false"
 We will just have to create a the branch in the remote repository and then run
 the command again.
 
-## Craeting remote branches
+## Creating remote branches
 
 In order to create a remote branch, we can run the following command to push
 the local branch to a new remote branch:
